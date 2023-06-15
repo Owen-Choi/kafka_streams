@@ -43,6 +43,16 @@ public class KafkaMessageProducer {
         producer.send(message);
     }
 
+//    public void sendMessage(User user) {
+//        Properties properties = new Properties();
+//        properties.setProperty(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
+//        properties.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, keySerializer);
+//        properties.setProperty(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, valueSerializer);
+//        KafkaProducer<String, User> producer = new KafkaProducer<>(properties);
+//        ProducerRecord<String, User> message = new ProducerRecord<>("domain-event-user", user);
+//        producer.send(message);
+//    }
+
     public void sendMessageBySpringCloud(String payload) {
         streamBridge.send("domainEventString-out-0", payload);
     }

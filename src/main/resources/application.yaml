@@ -17,7 +17,7 @@ logging:
 
 spring:
   kafka:
-    bootstrap-servers: localhost:9093,localhost:9094,localhost:9095
+    bootstrap-servers: 172.16.214.34:9092
     consumer:
       group-id: consumer-group-1
       auto-offset-reset: earliest
@@ -54,7 +54,7 @@ spring:
             enableDlq: true
             dlqName: dlt_domain-event-model
       binder:
-        brokers: localhost:9093,localhost:9094,localhost:9095
+        brokers: 172.16.214.34:9092
         configuration:
           auto.offset.reset: earliest
           key.deserializer: org.apache.kafka.common.serialization.StringDeserializer
